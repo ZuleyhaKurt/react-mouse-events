@@ -13,6 +13,9 @@ const Form = () => {
         alert(`username:${username}
         email: ${email},
         password: ${password}`)
+        setUsername("");
+        setEmail("");
+        setPassword("");
 }
 
     const handleUsername = (e) => {
@@ -28,19 +31,19 @@ const Form = () => {
           <label htmlFor="username" className="form-label">
                     Username: <span>{ username}</span>
           </label>
-          <input type="text" className="form-control" id="username" onChange={handleUsername}/>
+          <input type="text" className="form-control" id="username"value={username} onChange={handleUsername}/>
         </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
                     Email:<span>{email}</span>
           </label>
-          <input type="email" className="form-control" id="email" onChange={(e)=>setEmail(e.target.value)} />
+          <input type="email" className="form-control" value={email} id="email" onChange={(e)=>setEmail(e.target.value)} />
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
             Password
           </label>
-          <input type="password" className="form-control" id="password" />
+          <input type="password" className="form-control" value={password} id="password" onChange={(e)=>setPassword(e.target.value)}/>
         </div>
   
         <button type="submit" className="btn btn-primary">
