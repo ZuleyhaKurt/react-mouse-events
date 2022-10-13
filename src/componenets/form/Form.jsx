@@ -11,8 +11,8 @@ const Form = () => {
         e.preventDefault();
         console.log(e.target)
         alert(`username:${username}
-        email:,
-        password`)
+        email: ${email},
+        password: ${password}`)
 }
 
     const handleUsername = (e) => {
@@ -32,9 +32,9 @@ const Form = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
-            Email
+                    Email:<span>{email}</span>
           </label>
-          <input type="email" className="form-control" id="email" />
+          <input type="email" className="form-control" id="email" onChange={(e)=>setEmail(e.target.value)} />
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
