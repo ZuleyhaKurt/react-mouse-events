@@ -1,10 +1,24 @@
+import {useState} from 'react'
+
+
 const Form = () => {
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+ 
+
     const handleSubmit = (e) => {
         e.preventDefault();
-    console.log(e.target)
+        console.log(e.target)
+        alert(`username:${username}
+        email:,
+        password`)
 }
 
-
+    const handleUsername = (e) => {
+        console.log(e.target.value);
+        setUsername(e.target.value)
+}
 
     return (
       <form onSubmit={handleSubmit}>
@@ -12,9 +26,9 @@ const Form = () => {
   
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
-            Username
+                    Username: <span>{ username}</span>
           </label>
-          <input type="text" className="form-control" id="username" />
+          <input type="text" className="form-control" id="username" onChange={handleUsername}/>
         </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
