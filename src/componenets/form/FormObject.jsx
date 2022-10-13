@@ -21,7 +21,10 @@ const FormObject = () => {
        
 }
 
-    const handleForm=()=>{}
+    const handleForm = (e) => {
+        console.log(e.target.id)
+        setFormValues({...formValues,[e.target.id]:e.target.value})
+    }
 
 
     return (
